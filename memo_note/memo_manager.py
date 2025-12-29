@@ -18,3 +18,9 @@ def read_memos():
             return file.readlines() # 파일의 모든 줄을 리스트로 반환합니다.
     except FileNotFoundError:
         return [] # 파일이 없으면 빈 리스트를 반환합니다.
+    
+def search_memo(keyword):
+    memos = read_memos()
+    # keyword가 포함된 메모만 리스트로 만듭니다.
+    results = [memo for memo in memos if keyword in memo]
+    return results
